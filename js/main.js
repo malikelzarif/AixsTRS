@@ -1,6 +1,6 @@
 /* /js/main.js
    =========================================================
-   Unique IT SOLUTIONS — Full Website JS (Vanilla)
+   AxisTRS — Full Website JS (Vanilla)
    Works for ALL pages:
    - Sticky header behavior (optional shadow on scroll)
    - Mobile menu open/close + ESC + click outside + focus trap
