@@ -1,0 +1,38 @@
+<!-- /assets/dashboard-placeholder.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Dashboard placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0e1930"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" x2="1">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="700" rx="26" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="652" rx="22" fill="none" stroke="#eaf0ff" stroke-opacity="0.12"/>
+
+  <rect x="56" y="70" width="420" height="18" rx="9" fill="#eaf0ff" fill-opacity="0.14"/>
+  <rect x="56" y="104" width="280" height="12" rx="6" fill="#eaf0ff" fill-opacity="0.10"/>
+
+  <rect x="56" y="160" width="520" height="220" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#eaf0ff" stroke-opacity="0.10"/>
+  <path d="M86 342 C 140 290, 210 312, 270 250 S 410 240, 520 210" fill="none" stroke="url(#glow)" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="270" cy="250" r="6" fill="#7dd3fc" opacity="0.9"/>
+  <circle cx="520" cy="210" r="6" fill="#a78bfa" opacity="0.9"/>
+
+  <rect x="606" y="160" width="520" height="220" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#eaf0ff" stroke-opacity="0.10"/>
+  <rect x="636" y="196" width="220" height="18" rx="9" fill="#eaf0ff" fill-opacity="0.12"/>
+  <rect x="636" y="230" width="420" height="10" rx="5" fill="#eaf0ff" fill-opacity="0.08"/>
+  <rect x="636" y="252" width="380" height="10" rx="5" fill="#eaf0ff" fill-opacity="0.08"/>
+  <rect x="636" y="274" width="320" height="10" rx="5" fill="#eaf0ff" fill-opacity="0.08"/>
+
+  <rect x="56" y="410" width="350" height="230" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#eaf0ff" stroke-opacity="0.10"/>
+  <rect x="430" y="410" width="350" height="230" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#eaf0ff" stroke-opacity="0.10"/>
+  <rect x="804" y="410" width="322" height="230" rx="18" fill="#ffffff" fill-opacity="0.04" stroke="#eaf0ff" stroke-opacity="0.10"/>
+
+  <text x="600" y="670" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="#eaf0ff" fill-opacity="0.55">
+    Dashboard image placeholder (no external assets)
+  </text>
+</svg>

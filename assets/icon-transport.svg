@@ -1,0 +1,5 @@
+<!-- /assets/icon-transport.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" role="img" aria-label="Icon">
+  <rect x="8" y="8" width="28" height="28" rx="10" fill="#a78bfa" opacity="0.16"/>
+  <path d="M14 26h16M18 18h8M14 22h16" stroke="#eaf0ff" stroke-opacity="0.85" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

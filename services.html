@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Unique IT SOLUTIONS</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+ <header class="header">
+    <div class="header__bar">
+      <div class="container header__inner">
+        <!-- Left: logo -->
+        <a class="header__brand" href="index.html" aria-label="Unique IT SOLUTIONS Home">
+          <img class="header__logo" src="assets/logo.png" alt="Unique IT SOLUTIONS" />
+        </a>
+
+        <!-- Center nav -->
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li class="dropdown" aria-expanded="false">
+              <a class="nav__link dropdown__trigger" href="services.html" aria-haspopup="true">
+                Services <span class="dropdown__chev" aria-hidden="true">▾</span>
+              </a>
+
+              <div class="dropdown__menu" role="menu" aria-label="Services menu">
+                <a class="dropdown__item" href="services.html#managed">
+                  <strong>Managed Services</strong><span>MSP / MSSP coverage</span>
+                </a>
+                <a class="dropdown__item" href="services.html#project">
+                  <strong>Project Management</strong><span>Disciplined delivery</span>
+                </a>
+                <a class="dropdown__item" href="services.html#transport">
+                  <strong>Infrastructure Transport</strong><span>Secure logistics</span>
+                </a>
+                <a class="dropdown__item" href="services.html#relocation">
+                  <strong>Technology Relocation</strong><span>Moves + cutovers</span>
+                </a>
+                <a class="dropdown__item" href="services.html#tech">
+                  <strong>Technology Services</strong><span>Endpoint + network</span>
+                </a>
+              </div>
+            </li>
+
+            <li><a class="nav__link" href="case-studies.html">Case Studies</a></li>
+            <li><a class="nav__link" href="about.html">About Us</a></li>
+            <li><a class="nav__link" href="support.html">Support</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: phone + CTA + mobile toggle -->
+        <div class="header__right">
+          <a class="header__phone" href="tel:+12124659002">
+            <span class="header__phone-dot" aria-hidden="true"></span>
+            +1 (212) 465-9002
+          </a>
+
+          <a class="btn btn--primary header__cta" href="#cta">Schedule a Readiness Review</a>
+
+          <button class="hamburger" type="button" aria-label="Open menu">
+            <span class="hamburger__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Panel -->
+  <div class="mobile" aria-hidden="true">
+    <div class="mobile__backdrop" aria-hidden="true"></div>
+
+    <div class="mobile__panel" role="dialog" aria-label="Mobile menu" aria-modal="true">
+      <div class="mobile__head">
+        <strong>Menu</strong>
+        <button class="mobile__close" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile__body">
+        <!-- Services accordion inside menu -->
+        <div class="mobile__services" aria-expanded="false">
+          <button class="mobile__servicesBtn" type="button">
+            Services <span aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="mobile__servicesList" aria-label="Services links">
+            <li><a class="mobile__servicesItem" href="services.html#managed"><strong>Managed Services</strong><span>MSP / MSSP coverage</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#project"><strong>Project Management</strong><span>Disciplined delivery</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#transport"><strong>Infrastructure Transport</strong><span>Secure logistics</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#relocation"><strong>Technology Relocation</strong><span>Moves + cutovers</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#tech"><strong>Technology Services</strong><span>Endpoint + network</span></a></li>
+          </ul>
+        </div>
+
+        <ul class="mobile__list" aria-label="Menu links">
+          <li><a class="mobile__link" href="case-studies.html"><strong>Case Studies</strong><span class="mobile__meta">Proof + outcomes</span></a></li>
+          <li><a class="mobile__link" href="about.html"><strong>About Us</strong><span class="mobile__meta">Mission + approach</span></a></li>
+          <li><a class="mobile__link" href="support.html"><strong>Support</strong><span class="mobile__meta">Get help fast</span></a></li>
+        </ul>
+
+        <div class="mobile__ctaRow">
+          <a class="btn btn--secondary" href="tel:+12124659002">Call: +1 (212) 465-9002</a>
+          <a class="btn btn--primary" href="#cta">Schedule a Readiness Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+<div class="container">
+
+<h1>Enterprise Technology Services</h1>
+
+<p>
+Unique IT SOLUTIONS delivers secure, high-performance IT services
+designed for businesses that depend on reliability.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+<div class="container services-page">
+
+
+<!-- Managed -->
+
+<div class="services-page__item" id="managed">
+
+<div class="services-page__text">
+
+<h2>Managed Services</h2>
+
+<p>
+Continuous monitoring, infrastructure support, cybersecurity protection,
+and operational oversight to keep your systems performing at peak level.
+</p>
+
+<ul>
+
+<li>24/7 system monitoring</li>
+
+<li>Security management</li>
+
+<li>Infrastructure optimization</li>
+
+<li>Helpdesk & executive support</li>
+
+</ul>
+
+</div>
+
+<div class="services-page__image">
+
+<img src="assets/service-managed.jpg">
+
+</div>
+
+</div>
+
+
+
+<!-- Project Management -->
+
+<div class="services-page__item" id="project">
+
+<div class="services-page__image">
+
+<img src="assets/service-project.jpg">
+
+</div>
+
+<div class="services-page__text">
+
+<h2>Project Management</h2>
+
+<p>
+We manage complex technology initiatives from planning to deployment
+ensuring every milestone is achieved with precision.
+</p>
+
+<ul>
+
+<li>Technology migrations</li>
+
+<li>Infrastructure upgrades</li>
+
+<li>Enterprise rollout coordination</li>
+
+<li>Risk mitigation strategies</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<!-- Infrastructure -->
+
+<div class="services-page__item" id="transport">
+
+<div class="services-page__text">
+
+<h2>Infrastructure Transport Services</h2>
+
+<p>
+Secure relocation and logistics of critical IT equipment,
+including servers, racks, and networking hardware.
+</p>
+
+<ul>
+
+<li>Secure equipment transport</li>
+
+<li>Datacenter relocation</li>
+
+<li>Rack installation</li>
+
+<li>Asset tracking</li>
+
+</ul>
+
+</div>
+
+<div class="services-page__image">
+
+<img src="assets/service-transport.jpg">
+
+</div>
+
+</div>
+
+
+
+<!-- Relocation -->
+
+<div class="services-page__item" id="relocation">
+
+<div class="services-page__image">
+
+<img src="assets/service-relocation.jpg">
+
+</div>
+
+<div class="services-page__text">
+
+<h2>Technology Relocation</h2>
+
+<p>
+Office and datacenter technology relocation performed with
+minimal disruption and maximum operational continuity.
+</p>
+
+<ul>
+
+<li>Office IT relocation</li>
+
+<li>Network reconfiguration</li>
+
+<li>Server migration</li>
+
+<li>Post-move validation</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+<!-- Tech Services -->
+
+<div class="services-page__item" id="tech">
+
+<div class="services-page__text">
+
+<h2>Technology Services</h2>
+
+<p>
+Specialized IT consulting, system architecture, and enterprise
+technology strategy development.
+</p>
+
+<ul>
+
+<li>Technology consulting</li>
+
+<li>Infrastructure design</li>
+
+<li>Cloud architecture</li>
+
+<li>Advanced troubleshooting</li>
+
+</ul>
+
+</div>
+
+<div class="services-page__image">
+
+<img src="assets/service-tech.jpg">
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta section">
+
+<div class="container">
+
+<h2>Let’s design the right IT solution for your business.</h2>
+
+<a href="support.html" class="btn btn-primary">
+Request Consultation
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<h4>Unique IT SOLUTIONS</h4>
+
+<p>
+Enterprise technology services built for reliability,
+security, and operational excellence.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Services</h4>
+
+<a href="#managed">Managed Services</a>
+
+<a href="#project">Project Management</a>
+
+<a href="#transport">Infrastructure Transport</a>
+
+<a href="#relocation">Technology Relocation</a>
+
+<a href="#tech">Technology Services</a>
+
+</div>
+
+
+<div>
+
+<h4>Company</h4>
+
+<a href="about.html">About</a>
+
+<a href="case-studies.html">Case Studies</a>
+
+</div>
+
+
+<div>
+
+<h4>Support</h4>
+
+<a href="support.html">Contact</a>
+
+</div>
+
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 Unique IT SOLUTIONS
+
+</div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<!-- /assets/icon-tech.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" role="img" aria-label="Icon">
+  <rect x="8" y="8" width="28" height="28" rx="10" fill="#ffffff" opacity="0.10"/>
+  <path d="M18 18h8v8h-8z" fill="none" stroke="#eaf0ff" stroke-opacity="0.85" stroke-width="2.4" />
+  <path d="M14 22h4M26 22h4M22 14v4M22 26v4" stroke="#eaf0ff" stroke-opacity="0.85" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

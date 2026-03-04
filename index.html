@@ -1,0 +1,580 @@
+<!-- /index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unique IT SOLUTIONS | Technology Delivered, Reputation Preserved</title>
+  <meta name="description" content="Unique IT SOLUTIONS provides high-stakes IT: managed services, project delivery, infrastructure transport, technology relocation, and technology services." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- =========================
+       1) Sticky Header / Nav
+  ========================== -->
+  <header class="header">
+    <div class="header__bar">
+      <div class="container header__inner">
+        <!-- Left: logo -->
+        <a class="header__brand" href="index.html" aria-label="Unique IT SOLUTIONS Home">
+          <img class="header__logo" src="assets/logo.png" alt="Unique IT SOLUTIONS" />
+        </a>
+
+        <!-- Center nav -->
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li class="dropdown" aria-expanded="false">
+              <a class="nav__link dropdown__trigger" href="services.html" aria-haspopup="true">
+                Services <span class="dropdown__chev" aria-hidden="true">▾</span>
+              </a>
+
+              <div class="dropdown__menu" role="menu" aria-label="Services menu">
+                <a class="dropdown__item" href="services.html#managed">
+                  <strong>Managed Services</strong><span>MSP / MSSP coverage</span>
+                </a>
+                <a class="dropdown__item" href="services.html#project">
+                  <strong>Project Management</strong><span>Disciplined delivery</span>
+                </a>
+                <a class="dropdown__item" href="services.html#transport">
+                  <strong>Infrastructure Transport</strong><span>Secure logistics</span>
+                </a>
+                <a class="dropdown__item" href="services.html#relocation">
+                  <strong>Technology Relocation</strong><span>Moves + cutovers</span>
+                </a>
+                <a class="dropdown__item" href="services.html#tech">
+                  <strong>Technology Services</strong><span>Endpoint + network</span>
+                </a>
+              </div>
+            </li>
+
+            <li><a class="nav__link" href="case-studies.html">Case Studies</a></li>
+            <li><a class="nav__link" href="about.html">About Us</a></li>
+            <li><a class="nav__link" href="support.html">Support</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: phone + CTA + mobile toggle -->
+        <div class="header__right">
+          <a class="header__phone" href="tel:+12124659002">
+            <span class="header__phone-dot" aria-hidden="true"></span>
+            +1 (212) 465-9002
+          </a>
+
+          <a class="btn btn--primary header__cta" href="#cta">Schedule a Readiness Review</a>
+
+          <button class="hamburger" type="button" aria-label="Open menu">
+            <span class="hamburger__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Panel -->
+  <div class="mobile" aria-hidden="true">
+    <div class="mobile__backdrop" aria-hidden="true"></div>
+
+    <div class="mobile__panel" role="dialog" aria-label="Mobile menu" aria-modal="true">
+      <div class="mobile__head">
+        <strong>Menu</strong>
+        <button class="mobile__close" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile__body">
+        <!-- Services accordion inside menu -->
+        <div class="mobile__services" aria-expanded="false">
+          <button class="mobile__servicesBtn" type="button">
+            Services <span aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="mobile__servicesList" aria-label="Services links">
+            <li><a class="mobile__servicesItem" href="services.html#managed"><strong>Managed Services</strong><span>MSP / MSSP coverage</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#project"><strong>Project Management</strong><span>Disciplined delivery</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#transport"><strong>Infrastructure Transport</strong><span>Secure logistics</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#relocation"><strong>Technology Relocation</strong><span>Moves + cutovers</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#tech"><strong>Technology Services</strong><span>Endpoint + network</span></a></li>
+          </ul>
+        </div>
+
+        <ul class="mobile__list" aria-label="Menu links">
+          <li><a class="mobile__link" href="case-studies.html"><strong>Case Studies</strong><span class="mobile__meta">Proof + outcomes</span></a></li>
+          <li><a class="mobile__link" href="about.html"><strong>About Us</strong><span class="mobile__meta">Mission + approach</span></a></li>
+          <li><a class="mobile__link" href="support.html"><strong>Support</strong><span class="mobile__meta">Get help fast</span></a></li>
+        </ul>
+
+        <div class="mobile__ctaRow">
+          <a class="btn btn--secondary" href="tel:+12124659002">Call: +1 (212) 465-9002</a>
+          <a class="btn btn--primary" href="#cta">Schedule a Readiness Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       2) Hero Section
+  ========================== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="container hero__grid">
+      <div class="hero__lead">
+        <p class="kicker">Trusted for high-stakes IT</p>
+        <h1 class="h1">Technology Delivered, Reputation Preserved.</h1>
+        <p class="p--lg">
+          Enterprise-grade IT services designed for uptime, security, and flawless execution — across offices,
+          infrastructure moves, and ongoing operations.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#cta">Schedule a Readiness Review</a>
+          <a class="link" href="#services">
+            Explore services <span class="link__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="hero__panelInner">
+          <!-- If you have the generated image, use this -->
+          <img class="hero__img" src="assets/hero.png" alt="Modern IT operations dashboard" />
+
+          <div class="hero__statRow" aria-label="Highlights">
+            <div class="miniStat">
+              <div class="miniStat__num">SOC-aligned</div>
+              <div class="miniStat__label">Controls + reporting</div>
+            </div>
+            <div class="miniStat">
+              <div class="miniStat__num">White-glove</div>
+              <div class="miniStat__label">Executive support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       3) Feature Callouts (3)
+  ========================== -->
+  <section class="section callouts">
+    <div class="container grid grid--3">
+      <article class="card">
+        <div class="card__inner">
+          <p class="kicker">Preparedness</p>
+          <h3 class="h3">Runbooks, change control, validation</h3>
+          <p class="p">Disciplined execution with clear milestones, approvals, and rollback planning.</p>
+          <a class="link" href="about.html#approach">See our approach <span class="link__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__inner">
+          <p class="kicker">Security-first</p>
+          <h3 class="h3">Risk reduction baked into delivery</h3>
+          <p class="p">Least privilege, secure handling, and measured controls at every stage.</p>
+          <a class="link" href="#trust">View compliance <span class="link__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__inner">
+          <p class="kicker">Measured</p>
+          <h3 class="h3">Metrics you can hold us to</h3>
+          <p class="p">Transparent performance reporting with SLA governance and continuous improvement.</p>
+          <a class="link" href="#proof">See proof <span class="link__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================
+       4) Trust / Compliance Banner
+  ========================== -->
+  <section class="section section--tight" id="trust">
+    <div class="container">
+      <div class="banner">
+        <div class="banner__inner">
+          <div class="stack stack--sm">
+            <p class="kicker">Trust & Compliance</p>
+            <h2 class="h2">SOC 2 Type II — Trust Service Criteria</h2>
+            <p class="p">A compliance-aligned approach to protecting data, systems, and business continuity.</p>
+          </div>
+
+          <div class="banner__actions">
+            <a class="btn btn--secondary" href="#" aria-label="Read press release (placeholder)">Read the Press Release</a>
+            <a class="btn btn--secondary" href="#" aria-label="View SOC 3 report (placeholder)">View Our SOC 3 Report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       5) Featured Publication
+  ========================== -->
+  <section class="section">
+    <div class="container featured">
+      <div class="stack">
+        <p class="kicker">Featured</p>
+        <h2 class="h2">Recognized in a leading industry publication</h2>
+        <p class="p">
+          Highlight a feature like “UBS Family Office Quarterly” (placeholder) to reinforce credibility with decision-makers.
+        </p>
+        <a class="btn btn--secondary" href="#">Read the feature</a>
+      </div>
+
+      <div class="featured__media" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- =========================
+       6) Services Grid (5 cards)
+  ========================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="services__head">
+        <h2 class="h2">Customized 360-degree technology services</h2>
+        <p class="p">Built to support complex environments — from ongoing operations to high-risk moves and cutovers.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card serviceCard">
+          <div class="serviceCard__inner">
+            <img src="assets/icon-managed.svg" alt="" width="42" height="42" />
+            <h3 class="h3">Managed Services (MSP/MSSP)</h3>
+            <p class="p">Monitoring, security, and support designed for uptime and accountability.</p>
+            <a class="link" href="services.html#managed">Discover <span class="link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="card serviceCard">
+          <div class="serviceCard__inner">
+            <img src="assets/icon-project.svg" alt="" width="42" height="42" />
+            <h3 class="h3">Project Management</h3>
+            <p class="p">Disciplined delivery with clear milestones, risk tracking, and change control.</p>
+            <a class="link" href="services.html#project">Discover <span class="link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="card serviceCard">
+          <div class="serviceCard__inner">
+            <img src="assets/icon-transport.svg" alt="" width="42" height="42" />
+            <h3 class="h3">Infrastructure Transport</h3>
+            <p class="p">Secure logistics and chain-of-custody for critical equipment.</p>
+            <a class="link" href="services.html#transport">Discover <span class="link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="card serviceCard">
+          <div class="serviceCard__inner">
+            <img src="assets/icon-relocation.svg" alt="" width="42" height="42" />
+            <h3 class="h3">Technology Relocation</h3>
+            <p class="p">Moves and cutovers executed with minimal disruption and full validation.</p>
+            <a class="link" href="services.html#relocation">Discover <span class="link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="card serviceCard">
+          <div class="serviceCard__inner">
+            <img src="assets/icon-tech.svg" alt="" width="42" height="42" />
+            <h3 class="h3">Technology Services</h3>
+            <p class="p">Endpoint, network, and infrastructure improvements built for reliability.</p>
+            <a class="link" href="services.html#tech">Discover <span class="link__arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       7) Measured Experience Counters
+  ========================== -->
+  <section class="section">
+    <div class="container metrics">
+      <div class="metrics__inner">
+        <div class="services__head">
+          <h2 class="h2">Measured experience</h2>
+          <p class="p">Trusted outcomes built on verified execution, not promises.</p>
+        </div>
+
+        <div class="metricGrid" role="list" aria-label="Company metrics">
+          <div class="metric" role="listitem">
+            <div class="metric__num" data-count="20">0</div>
+            <div class="metric__label">Years of Experience</div>
+          </div>
+
+          <div class="metric" role="listitem">
+            <div class="metric__num" data-count="150">0</div>
+            <div class="metric__label">Industry Certifications</div>
+          </div>
+
+          <div class="metric" role="listitem">
+            <div class="metric__num" data-count="75">0</div>
+            <div class="metric__label">Experts</div>
+          </div>
+
+          <div class="metric" role="listitem">
+            <div class="metric__num" data-count="12">0</div>
+            <div class="metric__label">Global Offices</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       8) Approach (PLAN / MOVE / PROTECT / MANAGE)
+  ========================== -->
+  <section class="section" id="approach">
+    <div class="container stack stack--lg">
+      <div class="stack">
+        <p class="kicker">How we keep you ready</p>
+        <h2 class="h2">Our disciplined 3+1 approach</h2>
+        <p class="p">A repeatable model designed for environments where failure isn’t acceptable.</p>
+      </div>
+
+      <div class="approach__grid">
+        <article class="card approachCard">
+          <div class="approachCard__inner">
+            <div class="approachCard__title">
+              <h3 class="h3">PLAN</h3><span class="approachCard__tag">Predictable</span>
+            </div>
+            <ul class="list">
+              <li>Discovery + requirements</li>
+              <li>Runbooks + rollback</li>
+              <li>Risk tracking</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card approachCard">
+          <div class="approachCard__inner">
+            <div class="approachCard__title">
+              <h3 class="h3">MOVE</h3><span class="approachCard__tag">Controlled</span>
+            </div>
+            <ul class="list">
+              <li>Phased execution</li>
+              <li>Change windows</li>
+              <li>Validation checks</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card approachCard">
+          <div class="approachCard__inner">
+            <div class="approachCard__title">
+              <h3 class="h3">PROTECT</h3><span class="approachCard__tag">Secure</span>
+            </div>
+            <ul class="list">
+              <li>Security-first posture</li>
+              <li>Least privilege</li>
+              <li>Incident readiness</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card approachCard">
+          <div class="approachCard__inner">
+            <div class="approachCard__title">
+              <h3 class="h3">MANAGE</h3><span class="approachCard__tag">Measured</span>
+            </div>
+            <ul class="list">
+              <li>KPIs + reporting</li>
+              <li>SLA governance</li>
+              <li>Continuous improvement</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       9) Partners Logo Row
+  ========================== -->
+  <section class="section section--tight">
+    <div class="container partners">
+      <div class="partners__inner">
+        <div class="services__head">
+          <h2 class="h2">Trusted by partners</h2>
+          <p class="p">Replace placeholders with real partner logos when available.</p>
+        </div>
+
+        <div class="logoRow" aria-label="Partner logos">
+          <div class="logo"><img src="assets/partner-01.svg" alt="Partner logo 1" /></div>
+          <div class="logo"><img src="assets/partner-02.svg" alt="Partner logo 2" /></div>
+          <div class="logo"><img src="assets/partner-03.svg" alt="Partner logo 3" /></div>
+          <div class="logo"><img src="assets/partner-04.svg" alt="Partner logo 4" /></div>
+          <div class="logo"><img src="assets/partner-05.svg" alt="Partner logo 5" /></div>
+          <div class="logo"><img src="assets/partner-06.svg" alt="Partner logo 6" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       10) Live Metrics / Proof
+  ========================== -->
+  <section class="section" id="proof">
+    <div class="container proof">
+      <div class="proof__inner">
+        <div class="stack">
+          <p class="kicker">Proof</p>
+          <h2 class="h2">We publish performance metrics you can trust</h2>
+          <p class="p">Show response times, SLA adherence, security posture, and delivery outcomes — with clarity.</p>
+          <a class="btn btn--secondary" href="case-studies.html">View case studies</a>
+        </div>
+
+        <div class="dashboard" aria-hidden="true">
+          <!-- Optional: replace with an image
+          <img src="assets/dashboard-placeholder.svg" alt="Dashboard placeholder" />
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       11) FAQ Accordion
+  ========================== -->
+  <section class="section">
+    <div class="container faq" id="faq">
+      <div class="faq__inner">
+        <div class="services__head">
+          <h2 class="h2">Questions our clients ask before partnering with us</h2>
+          <p class="p">Only one item opens at a time. Keyboard accessible.</p>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion__item" aria-expanded="false">
+            <button class="accordion__button" type="button">
+              <span class="accordion__q">How do you minimize risk during migrations and relocations?</span>
+              <span class="accordion__icon" aria-hidden="true">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__panelInner">
+                We use runbooks, change control, staged execution, and validation checkpoints for every major move.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" aria-expanded="false">
+            <button class="accordion__button" type="button">
+              <span class="accordion__q">What does your managed services model include?</span>
+              <span class="accordion__icon" aria-hidden="true">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__panelInner">
+                Monitoring, incident response, security-first operations, reporting, and SLA governance (customized by scope).
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" aria-expanded="false">
+            <button class="accordion__button" type="button">
+              <span class="accordion__q">Can you support executive and high-touch users?</span>
+              <span class="accordion__icon" aria-hidden="true">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__panelInner">
+                Yes — white-glove support workflows, rapid response, and discreet onsite/remote coverage.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" aria-expanded="false">
+            <button class="accordion__button" type="button">
+              <span class="accordion__q">Do you provide compliance-aligned processes (SOC/ISO style)?</span>
+              <span class="accordion__icon" aria-hidden="true">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__panelInner">
+                We align delivery and operations to common control expectations: access management, logging, change records, and reporting.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item" aria-expanded="false">
+            <button class="accordion__button" type="button">
+              <span class="accordion__q">How quickly can you start?</span>
+              <span class="accordion__icon" aria-hidden="true">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__panelInner">
+                After a readiness review, we define scope and start dates based on urgency, complexity, and staffing requirements.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       12) Final CTA Section
+  ========================== -->
+  <section class="section" id="cta">
+    <div class="container">
+      <div class="finalCta">
+        <div class="finalCta__inner">
+          <h2 class="h2">Ready to reduce risk and increase reliability?</h2>
+          <p class="p">Schedule a readiness review and we’ll map a plan that fits your environment.</p>
+          <a class="btn btn--primary" href="support.html#support-form">Schedule a Readiness Review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       13) Footer
+  ========================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <h3 class="footer__title">Unique IT SOLUTIONS</h3>
+        <p class="p">High-stakes IT support, delivery, and relocation services.</p>
+        <p class="p">
+          <a class="link" href="tel:+12124659002">+1 (212) 465-9002 <span class="link__arrow" aria-hidden="true">→</span></a>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer__title">Useful Links</h3>
+        <ul class="footer__list">
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__title">Services</h3>
+        <ul class="footer__list">
+          <li><a href="services.html#managed">Managed Services</a></li>
+          <li><a href="services.html#project">Project Management</a></li>
+          <li><a href="services.html#transport">Infrastructure Transport</a></li>
+          <li><a href="services.html#relocation">Technology Relocation</a></li>
+          <li><a href="services.html#tech">Technology Services</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__title">Newsletter</h3>
+        <p class="p">Monthly insights on readiness, security, and reliability.</p>
+        <form class="form" action="#" method="post">
+          <input class="input" type="email" name="email" placeholder="Email address" aria-label="Email address" />
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      © <span id="year"></span> Unique IT SOLUTIONS. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
