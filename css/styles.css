@@ -300,7 +300,7 @@ input, select, textarea{ font:inherit; }
 
 .header__logo,
 .logo img{
-  height: 40px;
+  height: 190px;
   width: auto;
   filter: drop-shadow(0 6px 18px rgba(30,144,255,.22));
 }
