@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support | AxisTRS</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+   <header class="header">
+    <div class="header__bar">
+      <div class="container header__inner">
+        <!-- Left: logo -->
+        <a class="header__brand" href="index.html" aria-label="AxisTRS Home">
+          <img class="header__logo" src="assets/logo.png" alt="AxisTRS" />
+        </a>
+
+        <!-- Center nav -->
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+<li><a class="nav__link" href="index.html">Home</a></li>
+
+            <li class="dropdown" aria-expanded="false">
+              <a class="nav__link dropdown__trigger" href="services.html" aria-haspopup="true">
+                Services <span class="dropdown__chev" aria-hidden="true">▾</span>
+              </a>
+
+              <div class="dropdown__menu" role="menu" aria-label="Services menu">
+                <a class="dropdown__item" href="services.html#managed">
+                  <strong>Managed Services</strong><span>MSP / MSSP coverage</span>
+                </a>
+                <a class="dropdown__item" href="services.html#project">
+                  <strong>Project Management</strong><span>Disciplined delivery</span>
+                </a>
+                <a class="dropdown__item" href="services.html#transport">
+                  <strong>Infrastructure Transport</strong><span>Secure logistics</span>
+                </a>
+                <a class="dropdown__item" href="services.html#relocation">
+                  <strong>Technology Relocation</strong><span>Moves + cutovers</span>
+                </a>
+                <a class="dropdown__item" href="services.html#tech">
+                  <strong>Technology Services</strong><span>Endpoint + network</span>
+                </a>
+              </div>
+            </li>
+
+            <li><a class="nav__link" href="case-studies.html">Case Studies</a></li>
+            <li><a class="nav__link" href="about.html">About Us</a></li>
+            <li><a class="nav__link" href="support.html">Support</a></li>
+          </ul>
+        </nav>
+
+
+          <a class="btn btn--primary header__cta" href="#cta">Schedule a Readiness Review</a>
+
+          <button class="hamburger" type="button" aria-label="Open menu">
+            <span class="hamburger__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Panel -->
+  <div class="mobile" aria-hidden="true">
+    <div class="mobile__backdrop" aria-hidden="true"></div>
+
+    <div class="mobile__panel" role="dialog" aria-label="Mobile menu" aria-modal="true">
+      <div class="mobile__head">
+        <strong>Menu</strong>
+        <button class="mobile__close" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <div class="mobile__body">
+        <!-- Services accordion inside menu -->
+        <div class="mobile__services" aria-expanded="false">
+          <button class="mobile__servicesBtn" type="button">
+            Services <span aria-hidden="true">▾</span>
+          </button>
+
+          <ul class="mobile__servicesList" aria-label="Services links">
+            <li><a class="mobile__servicesItem" href="services.html#managed"><strong>Managed Services</strong><span>MSP / MSSP coverage</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#project"><strong>Project Management</strong><span>Disciplined delivery</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#transport"><strong>Infrastructure Transport</strong><span>Secure logistics</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#relocation"><strong>Technology Relocation</strong><span>Moves + cutovers</span></a></li>
+            <li><a class="mobile__servicesItem" href="services.html#tech"><strong>Technology Services</strong><span>Endpoint + network</span></a></li>
+          </ul>
+        </div>
+
+        <ul class="mobile__list" aria-label="Menu links">
+          <li><a class="mobile__link" href="case-studies.html"><strong>Case Studies</strong><span class="mobile__meta">Proof + outcomes</span></a></li>
+          <li><a class="mobile__link" href="about.html"><strong>About Us</strong><span class="mobile__meta">Mission + approach</span></a></li>
+          <li><a class="mobile__link" href="support.html"><strong>Support</strong><span class="mobile__meta">Get help fast</span></a></li>
+        </ul>
+
+        <div class="mobile__ctaRow">
+          <a class="btn btn--secondary" href="tel:+12124659002">Call: +1 (212) 465-9002</a>
+          <a class="btn btn--primary" href="#cta">Schedule a Readiness Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="section page-hero">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <p class="eyebrow">Support</p>
+      <h1 class="h1">Get help fast — structured, trackable, accountable</h1>
+      <p class="p--lg">
+        Submit a request and our team will respond based on severity and SLA.
+        For emergencies, call the support line.
+      </p>
+
+      <div class="page-hero__actions">
+        <a class="btn btn--primary" href="#support-form">Open a Support Request</a>
+        <a class="btn btn--secondary" href="tel:+12124659002">Call Support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT OPTIONS -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="grid grid--3 support-grid">
+        <article class="card support-card">
+          <div class="card__inner">
+            <p class="kicker">Urgent</p>
+            <h3 class="h3">Emergency Support</h3>
+            <p class="p">Production outage, security incident, or executive impact.</p>
+            <a class="btn btn--primary" href="tel:+12124659002">Call Now</a>
+          </div>
+        </article>
+
+        <article class="card support-card">
+          <div class="card__inner">
+            <p class="kicker">Standard</p>
+            <h3 class="h3">Open a Ticket</h3>
+            <p class="p">Device issues, access requests, software, network, and troubleshooting.</p>
+            <a class="btn btn--secondary" href="#support-form">Submit Request</a>
+          </div>
+        </article>
+
+        <article class="card support-card">
+          <div class="card__inner">
+            <p class="kicker">Self-serve</p>
+            <h3 class="h3">Quick Answers</h3>
+            <p class="p">Helpful guidance and FAQs for common requests.</p>
+            <a class="btn btn--secondary" href="#support-faq">View FAQs</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT FORM -->
+  <section class="section" id="support-form">
+    <div class="container">
+      <div class="grid grid--2 support-split">
+        <div class="stack">
+          <h2 class="h2">Open a Support Request</h2>
+          <p class="p">This is a front-end form (placeholder). You can connect it to email or a ticketing system later.</p>
+
+          <ul class="list">
+            <li><strong>Response:</strong> Based on severity and business impact.</li>
+            <li><strong>Clarity:</strong> Provide screenshots, asset tag, and exact error.</li>
+            <li><strong>Security:</strong> Never share passwords.</li>
+          </ul>
+        </div>
+
+        <form class="card support-form" action="#" method="post">
+          <div class="card__inner">
+            <label class="field">
+              <span class="field__label">Full name</span>
+              <input class="input input--block" type="text" name="name" placeholder="Your name" required />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input class="input input--block" type="email" name="email" placeholder="you@company.com" required />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Severity</span>
+              <select class="input input--block" name="severity" required>
+                <option value="">Select one</option>
+                <option>Emergency (Outage / Security / Executive)</option>
+                <option>High (Multiple users impacted)</option>
+                <option>Normal (Single user issue)</option>
+                <option>Low (Question / Request)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Issue summary</span>
+              <input class="input input--block" type="text" name="summary" placeholder="Short description" required />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Details</span>
+              <textarea class="input input--block" name="details" rows="5" placeholder="What happened? What changed? Any error message?"></textarea>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT FAQ -->
+  <section class="section section--light" id="support-faq">
+    <div class="container">
+      <div class="services__head">
+        <h2 class="h2">Support FAQs</h2>
+        <p class="p">Only one item opens at a time (uses your existing accordion JS).</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq__inner">
+          <div class="accordion">
+            <div class="accordion__item" aria-expanded="false">
+              <button class="accordion__button" type="button">
+                <span class="accordion__q">What information should I include in a ticket?</span>
+                <span class="accordion__icon" aria-hidden="true">▾</span>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__panelInner">
+                  Include the device name/asset tag, location, exact error text, screenshots, when it started, and what changed.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item" aria-expanded="false">
+              <button class="accordion__button" type="button">
+                <span class="accordion__q">What qualifies as an emergency?</span>
+                <span class="accordion__icon" aria-hidden="true">▾</span>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__panelInner">
+                  Production outages, security incidents, executive impact, or widespread business interruption.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item" aria-expanded="false">
+              <button class="accordion__button" type="button">
+                <span class="accordion__q">Do you support after-hours?</span>
+                <span class="accordion__icon" aria-hidden="true">▾</span>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__panelInner">
+                  Add your availability policy here (24/7, on-call, or business hours + escalation).
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item" aria-expanded="false">
+              <button class="accordion__button" type="button">
+                <span class="accordion__q">Can I request new hardware or software?</span>
+                <span class="accordion__icon" aria-hidden="true">▾</span>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__panelInner">
+                  Yes. Submit a request with business justification and your manager approval requirements (if applicable).
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item" aria-expanded="false">
+              <button class="accordion__button" type="button">
+                <span class="accordion__q">How do I follow up on status?</span>
+                <span class="accordion__icon" aria-hidden="true">▾</span>
+              </button>
+              <div class="accordion__panel">
+                <div class="accordion__panelInner">
+                  Add your process here (ticket portal, email updates, or support phone line).
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__bottom">
+      © <span id="year"></span> AxisTRS. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
