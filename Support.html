@@ -10,7 +10,7 @@
 <body>
 
   <!-- HEADER -->
-   <header class="header">
+  <header class="header">
     <div class="header__bar">
       <div class="container header__inner">
         <!-- Left: logo -->
@@ -21,7 +21,7 @@
         <!-- Center nav -->
         <nav class="nav" aria-label="Primary">
           <ul class="nav__list">
-<li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="index.html">Home</a></li>
 
             <li class="dropdown" aria-expanded="false">
               <a class="nav__link dropdown__trigger" href="services.html" aria-haspopup="true">
@@ -53,13 +53,11 @@
           </ul>
         </nav>
 
+        <a class="btn btn--primary header__cta" href="#cta">Schedule a Readiness Review</a>
 
-          <a class="btn btn--primary header__cta" href="#cta">Schedule a Readiness Review</a>
-
-          <button class="hamburger" type="button" aria-label="Open menu">
-            <span class="hamburger__bars" aria-hidden="true"><span></span><span></span><span></span></span>
-          </button>
-        </div>
+        <button class="hamburger" type="button" aria-label="Open menu">
+          <span class="hamburger__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -75,7 +73,6 @@
       </div>
 
       <div class="mobile__body">
-        <!-- Services accordion inside menu -->
         <div class="mobile__services" aria-expanded="false">
           <button class="mobile__servicesBtn" type="button">
             Services <span aria-hidden="true">▾</span>
@@ -162,7 +159,10 @@
       <div class="grid grid--2 support-split">
         <div class="stack">
           <h2 class="h2">Open a Support Request</h2>
-          <p class="p">This is a front-end form (placeholder). You can connect it to email or a ticketing system later.</p>
+          <p class="p">
+            Submit your request and our team will review it promptly.
+            Messages from this form are sent to <strong>info@axistrs.com</strong>.
+          </p>
 
           <ul class="list">
             <li><strong>Response:</strong> Based on severity and business impact.</li>
@@ -171,8 +171,15 @@
           </ul>
         </div>
 
-        <form class="card support-form" action="#" method="post">
+        <form
+          id="axistrs-contact-form"
+          class="card support-form"
+          action="https://formspree.io/f/mkoqznrv"
+          method="POST"
+        >
           <div class="card__inner">
+            <input type="hidden" name="_subject" value="New inquiry from AxisTRS website" />
+
             <label class="field">
               <span class="field__label">Full name</span>
               <input class="input input--block" type="text" name="name" placeholder="Your name" required />
@@ -187,10 +194,10 @@
               <span class="field__label">Severity</span>
               <select class="input input--block" name="severity" required>
                 <option value="">Select one</option>
-                <option>Emergency (Outage / Security / Executive)</option>
-                <option>High (Multiple users impacted)</option>
-                <option>Normal (Single user issue)</option>
-                <option>Low (Question / Request)</option>
+                <option value="Emergency (Outage / Security / Executive)">Emergency (Outage / Security / Executive)</option>
+                <option value="High (Multiple users impacted)">High (Multiple users impacted)</option>
+                <option value="Normal (Single user issue)">Normal (Single user issue)</option>
+                <option value="Low (Question / Request)">Low (Question / Request)</option>
               </select>
             </label>
 
@@ -201,10 +208,11 @@
 
             <label class="field">
               <span class="field__label">Details</span>
-              <textarea class="input input--block" name="details" rows="5" placeholder="What happened? What changed? Any error message?"></textarea>
+              <textarea class="input input--block" name="details" rows="5" placeholder="What happened? What changed? Any error message?" required></textarea>
             </label>
 
             <button class="btn btn--primary" type="submit">Submit Request</button>
+            <p id="form-status" class="p" style="margin-top:12px;"></p>
           </div>
         </form>
       </div>
@@ -285,7 +293,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -296,6 +303,37 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    const form = document.getElementById("axistrs-contact-form");
+    const status = document.getElementById("form-status");
+
+    if (form && status) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        status.textContent = "Submitting your request...";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          if (response.ok) {
+            form.reset();
+            status.textContent = "Thank you. Your request has been submitted successfully.";
+          } else {
+            status.textContent = "Something went wrong. Please try again.";
+          }
+        } catch (error) {
+          status.textContent = "Unable to submit right now. Please try again later.";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-
