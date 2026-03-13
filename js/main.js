@@ -437,34 +437,4 @@ if (heroPanel && heroImg && window.matchMedia("(pointer:fine)").matches) {
   heroPanel.addEventListener("mouseleave", () => {
     heroImg.style.transform = "";
   });
-}<script>
-  const form = document.getElementById("axistrs-contact-form");
-  const status = document.getElementById("form-status");
-
-  if (form && status) {
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      status.textContent = "Submitting your request...";
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          form.reset();
-          status.textContent = "Thank you. Your inquiry has been submitted successfully.";
-        } else {
-          status.textContent = "Something went wrong. Please try again.";
-        }
-      } catch (error) {
-        status.textContent = "Unable to submit right now. Please try again later.";
-      }
-    });
-  }
-</script>
+}
