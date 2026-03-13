@@ -10,6 +10,7 @@
    - Accordion (FAQ) one-open-at-a-time (supports both structures)
    - Metric count-up on scroll (supports .metric__num and .metric h3[data-count])
    - Reveal on scroll (adds premium animations)
+   - Support form submit handler
    =========================================================
 */
 
@@ -24,7 +25,7 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* -----------------------------
-     Sticky header shadow (safe)
+     Sticky header shadow
   ------------------------------ */
   const headerBar = qs(".header__bar");
   if (headerBar) {
@@ -51,7 +52,7 @@
       'input:not([disabled])',
       'select:not([disabled])',
       'textarea:not([disabled])',
-      '[tabindex]:not([tabindex="-1"])',
+      '[tabindex]:not([tabindex="-1"])'
     ].join(",");
     return qsa(selectors, container).filter((el) => el.offsetParent !== null);
   }
@@ -59,7 +60,6 @@
   function openMobileMenu() {
     if (!mobile) return;
     openMobileMenu._lastFocused = document.activeElement;
-
     mobile.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
@@ -72,7 +72,6 @@
     mobile.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
-    // Close mobile services accordion too (optional)
     const ms = qs(".mobile__services");
     if (ms) ms.setAttribute("aria-expanded", "false");
 
@@ -84,14 +83,79 @@
   if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", closeMobileMenu);
   if (mobileBackdrop) mobileBackdrop.addEventListener("click", closeMobileMenu);
 
+  /* -----------------------------
+     Mobile Services accordion
+  ------------------------------ */
+  const mobileServices = qs(".mobile__services");
+  const mobileServicesBtn = qs(".mobile__servicesBtn");
+  if (mobileServices && mobileServicesBtn) {
+    mobileServicesBtn.addEventListener("click", () => {
+      const expanded = mobileServices.getAttribute("aria-expanded") === "true";
+      mobileServices.setAttribute("aria-expanded", String(!expanded));
+    });
+  }
+
+  /* =======================================================
+     Desktop Services Dropdown
+  ======================================================== */
+  const dropdown = qs(".dropdown");
+  const dropdownTrigger = qs(".dropdown__trigger");
+
+  function openDropdown() {
+    if (!dropdown) return;
+    dropdown.setAttribute("aria-expanded", "true");
+  }
+
+  function closeDropdown() {
+    if (!dropdown) return;
+    dropdown.setAttribute("aria-expanded", "false");
+  }
+
+  if (dropdown && dropdownTrigger) {
+    let dropdownCloseTimer = null;
+
+    dropdown.addEventListener("mouseenter", () => {
+      if (dropdownCloseTimer) clearTimeout(dropdownCloseTimer);
+      openDropdown();
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+      dropdownCloseTimer = setTimeout(() => {
+        closeDropdown();
+      }, 220);
+    });
+
+    dropdown.addEventListener("focusin", openDropdown);
+    dropdown.addEventListener("focusout", (e) => {
+      if (!dropdown.contains(e.relatedTarget)) closeDropdown();
+    });
+
+    dropdownTrigger.addEventListener("click", (e) => {
+      const isExpanded = dropdown.getAttribute("aria-expanded") === "true";
+      if (!isExpanded) {
+        e.preventDefault();
+        openDropdown();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!dropdown.contains(e.target)) closeDropdown();
+    });
+
+    qsa(".dropdown__menu a").forEach((a) => {
+      a.addEventListener("click", () => closeDropdown());
+    });
+  }
+
+  /* =======================================================
+     Global key handling
+  ======================================================== */
   document.addEventListener("keydown", (e) => {
-    // ESC closes
     if (e.key === "Escape") {
       closeMobileMenu();
       closeDropdown();
     }
 
-    // Focus trap when mobile is open
     if (!mobile || mobile.getAttribute("aria-hidden") !== "false") return;
     if (e.key !== "Tab") return;
 
@@ -110,88 +174,6 @@
     }
   });
 
-  /* -----------------------------
-     Mobile Services accordion
-  ------------------------------ */
-  const mobileServices = qs(".mobile__services");
-  const mobileServicesBtn = qs(".mobile__servicesBtn");
-  if (mobileServices && mobileServicesBtn) {
-    mobileServicesBtn.addEventListener("click", () => {
-      const expanded = mobileServices.getAttribute("aria-expanded") === "true";
-      mobileServices.setAttribute("aria-expanded", String(!expanded));
-    });
-  }
-
-  /* =======================================================
-     Desktop Services Dropdown
-     - Works if you have:
-       .dropdown [aria-expanded]
-       .dropdown__trigger
-       .dropdown__menu
-  ======================================================== */
-  const dropdown = qs(".dropdown");
-  const dropdownTrigger = qs(".dropdown__trigger");
-
-  function openDropdown() {
-    if (!dropdown) return;
-    dropdown.setAttribute("aria-expanded", "true");
-  }
-
-  function closeDropdown() {
-    if (!dropdown) return;
-    dropdown.setAttribute("aria-expanded", "false");
-  }
-
-  if (dropdown && dropdownTrigger) {
-    // Hover open/close (desktop)
-    let dropdownCloseTimer = null;
-
-dropdown.addEventListener("mouseenter", () => {
-  if (dropdownCloseTimer) clearTimeout(dropdownCloseTimer);
-  openDropdown();
-});
-
-dropdown.addEventListener("mouseleave", () => {
-  // small delay makes it easier to click items
-  dropdownCloseTimer = setTimeout(() => {
-    closeDropdown();
-  }, 220);
-});
-
-    // Keyboard open on focus
-    dropdown.addEventListener("focusin", openDropdown);
-    dropdown.addEventListener("focusout", (e) => {
-      if (!dropdown.contains(e.relatedTarget)) closeDropdown();
-    });
-
-    // Click toggle (keeps accessible)
-    // Click behavior:
-// - On desktop: first click opens dropdown, second click goes to services.html
-// - On touch devices: tap opens dropdown, tap again goes
-dropdownTrigger.addEventListener("click", (e) => {
-  const isExpanded = dropdown.getAttribute("aria-expanded") === "true";
-
-  // If dropdown is NOT open yet, open it and stop navigation
-  if (!isExpanded) {
-    e.preventDefault();
-    openDropdown();
-    return;
-  }
-
-  // If dropdown IS already open, allow navigation to services.html (NO preventDefault)
-});
-
-    // Click outside closes
-    document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target)) closeDropdown();
-    });
-
-    // Close after selecting an item
-    qsa(".dropdown__menu a").forEach((a) => {
-      a.addEventListener("click", () => closeDropdown());
-    });
-  }
-
   /* =======================================================
      Smooth scroll for same-page anchors
   ======================================================== */
@@ -206,28 +188,26 @@ dropdownTrigger.addEventListener("click", (e) => {
       e.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      // Close mobile menu if open
-      if (mobile && mobile.getAttribute("aria-hidden") === "false") closeMobileMenu();
+      if (mobile && mobile.getAttribute("aria-hidden") === "false") {
+        closeMobileMenu();
+      }
     });
   });
 
   /* =======================================================
-     FAQ / Accordion (supports 2 structures)
-     A) Accessible accordion:
-        .accordion__item[aria-expanded] + .accordion__button + .accordion__panel
-     B) Simple FAQ blocks:
-        .faq-item h3 + p (adds click-to-toggle without breaking)
+     FAQ / Accordion
   ======================================================== */
-
-  // A) Accessible accordion
   const accordionItems = qsa(".accordion__item");
+
   function setPanelHeight(item, open) {
     const panel = qs(".accordion__panel", item);
     if (!panel) return;
+
     if (!open) {
       panel.style.maxHeight = null;
       return;
     }
+
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
 
@@ -239,13 +219,11 @@ dropdownTrigger.addEventListener("click", (e) => {
       btn.addEventListener("click", () => {
         const isOpen = item.getAttribute("aria-expanded") === "true";
 
-        // Close all
         accordionItems.forEach((i) => {
           i.setAttribute("aria-expanded", "false");
           setPanelHeight(i, false);
         });
 
-        // Open this if it was closed
         if (!isOpen) {
           item.setAttribute("aria-expanded", "true");
           setPanelHeight(item, true);
@@ -255,12 +233,13 @@ dropdownTrigger.addEventListener("click", (e) => {
 
     window.addEventListener("resize", () => {
       accordionItems.forEach((item) => {
-        if (item.getAttribute("aria-expanded") === "true") setPanelHeight(item, true);
+        if (item.getAttribute("aria-expanded") === "true") {
+          setPanelHeight(item, true);
+        }
       });
     });
   }
 
-  // B) Simple FAQ items (support.html version)
   const simpleFaq = qsa(".faq-item");
   if (simpleFaq.length) {
     simpleFaq.forEach((item) => {
@@ -268,30 +247,20 @@ dropdownTrigger.addEventListener("click", (e) => {
       const p = qs("p", item);
       if (!h || !p) return;
 
-      // Make heading clickable without changing your HTML
       h.style.cursor = "pointer";
       h.setAttribute("tabindex", "0");
       h.setAttribute("role", "button");
       h.setAttribute("aria-expanded", "false");
-
-      // Start collapsed visually (only if you want)
-      p.style.maxHeight = p.scrollHeight + "px"; // start open by default
-      // If you want closed-by-default, uncomment:
-      // p.style.overflow = "hidden";
-      // p.style.maxHeight = "0px";
+      p.style.maxHeight = p.scrollHeight + "px";
 
       function toggle() {
         const expanded = h.getAttribute("aria-expanded") === "true";
         h.setAttribute("aria-expanded", String(!expanded));
-
-        // Toggle paragraph
         p.style.overflow = "hidden";
         p.style.transition = "max-height 260ms cubic-bezier(.2,.9,.2,1)";
-        if (expanded) {
-          p.style.maxHeight = "0px";
-        } else {
-          p.style.maxHeight = p.scrollHeight + "px";
-        }
+
+        if (expanded) p.style.maxHeight = "0px";
+        else p.style.maxHeight = p.scrollHeight + "px";
       }
 
       h.addEventListener("click", toggle);
@@ -305,9 +274,7 @@ dropdownTrigger.addEventListener("click", (e) => {
   }
 
   /* =======================================================
-     Metric Counters (supports 2 structures)
-     A) .metric__num[data-count]
-     B) .metric h3[data-count]
+     Metric Counters
   ======================================================== */
   const metricNums = qsa(".metric__num[data-count]");
   const metricH3s = qsa(".metric h3[data-count]");
@@ -319,11 +286,12 @@ dropdownTrigger.addEventListener("click", (e) => {
 
     function step(now) {
       const t = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      const eased = 1 - Math.pow(1 - t, 3);
       const val = Math.floor(start + (target - start) * eased);
       el.textContent = val.toLocaleString();
       if (t < 1) requestAnimationFrame(step);
     }
+
     requestAnimationFrame(step);
   }
 
@@ -349,7 +317,6 @@ dropdownTrigger.addEventListener("click", (e) => {
 
       io.observe(metricTargets[0]);
     } else {
-      // Fallback
       metricTargets.forEach((el) => {
         const target = parseInt(el.getAttribute("data-count"), 10);
         if (!isNaN(target)) el.textContent = String(target);
@@ -359,8 +326,6 @@ dropdownTrigger.addEventListener("click", (e) => {
 
   /* =======================================================
      Scroll-Reveal Animations
-     - Adds: .reveal + .reveal--in + optional stagger vars
-     Requires CSS classes (already in styles.css)
   ======================================================== */
   (function initReveal() {
     const selectors = [
@@ -373,14 +338,13 @@ dropdownTrigger.addEventListener("click", (e) => {
       ".accordion__item",
       ".case-card",
       ".support-form",
-      ".support-info",
+      ".support-info"
     ];
 
     const els = Array.from(new Set(selectors.flatMap((s) => qsa(s)))).filter(Boolean);
 
     els.forEach((el) => {
       el.classList.add("reveal");
-      // cards: slightly nicer motion
       if (
         el.classList.contains("card") ||
         el.classList.contains("serviceCard") ||
@@ -391,7 +355,6 @@ dropdownTrigger.addEventListener("click", (e) => {
       }
     });
 
-    // Stagger inside common groups
     const groups = qsa(".grid, .logoRow, .accordion, .services-page, .approach__grid, .case-grid, .support-grid");
     groups.forEach((group) => {
       const kids = Array.from(group.children);
@@ -421,7 +384,9 @@ dropdownTrigger.addEventListener("click", (e) => {
 
     els.forEach((el) => io.observe(el));
   })();
-})();/* --- Hero parallax hover (optional premium effect) --- */
+})();
+
+/* --- Hero parallax hover (optional premium effect) --- */
 const heroPanel = document.querySelector(".hero__panel");
 const heroImg = document.querySelector(".hero__img");
 
@@ -430,11 +395,40 @@ if (heroPanel && heroImg && window.matchMedia("(pointer:fine)").matches) {
     const rect = heroPanel.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-
     heroImg.style.transform = `translate(${x * 10}px, ${y * 10}px) scale(1.02)`;
   });
 
   heroPanel.addEventListener("mouseleave", () => {
     heroImg.style.transform = "";
+  });
+}
+
+/* --- Support form submit --- */
+const form = document.getElementById("axistrs-contact-form");
+const status = document.getElementById("form-status");
+
+if (form && status) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    status.textContent = "Submitting your request...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.textContent = "Thank you. Your inquiry has been submitted successfully.";
+      } else {
+        status.textContent = "Something went wrong. Please try again.";
+      }
+    } catch (error) {
+      status.textContent = "Unable to submit right now. Please try again later.";
+    }
   });
 }
